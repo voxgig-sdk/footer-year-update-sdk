@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "API Support"
+        url: "https://getfullyear.com"
+      }
+      description: "This API automatically retrieves the current year for website footers, eliminating the need for manual updates each January. Designed for developers, it ensures that the displayed year is accurate and up to date, improving user experience while saving time and resources."
+      servers: [
+        {
+          description: "Production API Server"
+          url: "https://getfullyear.com/api"
+        }
+      ]
+      termsOfService: "https://getfullyear.com"
+      title: "Footer Year Update API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

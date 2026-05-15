@@ -1,0 +1,124 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Footer Year Update API",
+    "description": "This API automatically retrieves the current year for website footers, eliminating the need for manual updates each January. Designed for developers, it ensures that the displayed year is accurate and up to date, improving user experience while saving time and resources.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support",
+      "url": "https://getfullyear.com"
+    },
+    "termsOfService": "https://getfullyear.com"
+  },
+  "servers": [
+    {
+      "url": "https://getfullyear.com/api",
+      "description": "Production API Server"
+    }
+  ],
+  "paths": {
+    "/year": {
+      "get": {
+        "summary": "Get Current Year",
+        "description": "Returns the current year for use in website footers. The response includes the year as an integer, as a string, and includes a sponsored message (required to console.log for free tier users per Terms of Service).",
+        "operationId": "getCurrentYear",
+        "tags": [
+          "Year"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current year information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/YearResponse"
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "year": 2025,
+                      "year_string": "2025",
+                      "sponsored_by": "Viagra: standing tall and proud"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable - may occur during year transitions or maintenance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "YearResponse": {
+        "type": "object",
+        "required": [
+          "year",
+          "year_string",
+          "sponsored_by"
+        ],
+        "properties": {
+          "year": {
+            "type": "integer",
+            "description": "The current year as an integer",
+            "example": 2025
+          },
+          "year_string": {
+            "type": "string",
+            "description": "The current year as a string",
+            "example": "2025"
+          },
+          "sponsored_by": {
+            "type": "string",
+            "description": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
+            "example": "Viagra: standing tall and proud"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error information"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Year",
+      "description": "Operations related to retrieving the current year"
+    }
+  ],
+  "externalDocs": {
+    "description": "Full API Documentation",
+    "url": "https://getfullyear.com"
+  }
+}

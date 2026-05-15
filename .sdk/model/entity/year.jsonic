@@ -1,0 +1,47 @@
+# Entity: year
+
+main: kit: entity: year: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "sponsored_by"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "year"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "year_string"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "year"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/year"
+          parts: [
+            "year"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

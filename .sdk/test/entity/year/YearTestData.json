@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "year": {
+      "YEAR00": {
+        "sponsored_by": "s1e",
+        "year": "s1f",
+        "year_string": "s20"
+      },
+      "YEAR01": {
+        "sponsored_by": "s3c",
+        "year": "s3d",
+        "year_string": "s3e"
+      },
+      "YEAR02": {
+        "sponsored_by": "s5a",
+        "year": "s5b",
+        "year_string": "s5c"
+      }
+    }
+  },
+  "new": {
+    "year": {
+      "year_ref01": {
+        "sponsored_by": "s78",
+        "year": "s79",
+        "year_string": "s7a"
+      }
+    }
+  }
+}
