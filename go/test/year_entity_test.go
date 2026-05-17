@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/footer-year-update-sdk"
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	sdk "github.com/voxgig-sdk/footer-year-update-sdk/go"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/footer-year-update-sdk/go/utility/struct"
 )
 
 func TestYearEntity(t *testing.T) {

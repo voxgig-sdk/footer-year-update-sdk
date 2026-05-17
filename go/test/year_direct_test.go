@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/footer-year-update-sdk"
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	sdk "github.com/voxgig-sdk/footer-year-update-sdk/go"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 )
 
 func TestYearDirect(t *testing.T) {

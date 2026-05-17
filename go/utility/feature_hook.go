@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 )
 
 func featureHookUtil(ctx *core.Context, name string) {

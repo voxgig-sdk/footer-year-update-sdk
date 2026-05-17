@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/footer-year-update-sdk/go/utility/struct"
 )
 
 type YearEntity struct {

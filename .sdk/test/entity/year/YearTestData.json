@@ -4,17 +4,20 @@
       "YEAR00": {
         "sponsored_by": "s1e",
         "year": "s1f",
-        "year_string": "s20"
+        "year_string": "s20",
+        "id": "YEAR00"
       },
       "YEAR01": {
         "sponsored_by": "s3c",
         "year": "s3d",
-        "year_string": "s3e"
+        "year_string": "s3e",
+        "id": "YEAR01"
       },
       "YEAR02": {
         "sponsored_by": "s5a",
         "year": "s5b",
-        "year_string": "s5c"
+        "year_string": "s5c",
+        "id": "YEAR02"
       }
     }
   },

@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/footer-year-update-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 )
 
 const headerAuth = "authorization"

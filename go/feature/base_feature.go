@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 )
 
 type BaseFeature struct {

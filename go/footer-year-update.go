@@ -1,10 +1,10 @@
 package voxgigfooteryearupdatesdk
 
 import (
-	"github.com/voxgig-sdk/footer-year-update-sdk/core"
-	"github.com/voxgig-sdk/footer-year-update-sdk/entity"
-	"github.com/voxgig-sdk/footer-year-update-sdk/feature"
-	_ "github.com/voxgig-sdk/footer-year-update-sdk/utility"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/core"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/entity"
+	"github.com/voxgig-sdk/footer-year-update-sdk/go/feature"
+	_ "github.com/voxgig-sdk/footer-year-update-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

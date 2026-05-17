@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/footer-year-update-sdk/core"
+import "github.com/voxgig-sdk/footer-year-update-sdk/go/core"
 
 func makeContextUtil(ctxmap map[string]any, basectx *core.Context) *core.Context {
 	return core.NewContext(ctxmap, basectx)

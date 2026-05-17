@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/footer-year-update-sdk"
+	sdk "github.com/voxgig-sdk/footer-year-update-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {
