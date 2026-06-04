@@ -99,14 +99,12 @@ func yearDirectSetup(mockres any) *yearDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FOOTERYEARUPDATE_TEST_YEAR_ENTID": map[string]any{},
 		"FOOTERYEARUPDATE_TEST_LIVE":    "FALSE",
-		"FOOTERYEARUPDATE_APIKEY":       "NONE",
 	})
 
 	live := env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FOOTERYEARUPDATE_APIKEY"],
 		}
 		client := sdk.NewFooterYearUpdateSDK(mergedOpts)
 

@@ -117,7 +117,6 @@ func yearBasicSetup(extra map[string]any) *entityTestSetup {
 		"FOOTERYEARUPDATE_TEST_YEAR_ENTID": idmap,
 		"FOOTERYEARUPDATE_TEST_LIVE":      "FALSE",
 		"FOOTERYEARUPDATE_TEST_EXPLAIN":   "FALSE",
-		"FOOTERYEARUPDATE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["FOOTERYEARUPDATE_TEST_YEAR_ENTID"])
@@ -128,7 +127,6 @@ func yearBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["FOOTERYEARUPDATE_APIKEY"],
 			},
 			extra,
 		})

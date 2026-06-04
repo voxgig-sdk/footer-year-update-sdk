@@ -74,14 +74,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'FOOTERYEARUPDATE_TEST_YEAR_ENTID': {},
     'FOOTERYEARUPDATE_TEST_LIVE': 'FALSE',
-    'FOOTERYEARUPDATE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.FOOTERYEARUPDATE_TEST_LIVE
 
   if (live) {
     const client = new FooterYearUpdateSDK({
-      apikey: env.FOOTERYEARUPDATE_APIKEY,
     })
 
     let idmap: any = env['FOOTERYEARUPDATE_TEST_YEAR_ENTID']

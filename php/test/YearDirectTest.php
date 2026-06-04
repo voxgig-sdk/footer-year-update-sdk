@@ -67,14 +67,12 @@ function year_direct_setup($mockres)
     $env = Runner::env_override([
         "FOOTERYEARUPDATE_TEST_YEAR_ENTID" => [],
         "FOOTERYEARUPDATE_TEST_LIVE" => "FALSE",
-        "FOOTERYEARUPDATE_APIKEY" => "NONE",
     ]);
 
     $live = $env["FOOTERYEARUPDATE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["FOOTERYEARUPDATE_APIKEY"],
         ];
         $client = new FooterYearUpdateSDK($merged_opts);
         return [

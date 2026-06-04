@@ -59,14 +59,12 @@ def _year_direct_setup(mockres):
     env = runner.env_override({
         "FOOTERYEARUPDATE_TEST_YEAR_ENTID": {},
         "FOOTERYEARUPDATE_TEST_LIVE": "FALSE",
-        "FOOTERYEARUPDATE_APIKEY": "NONE",
     })
 
     live = env.get("FOOTERYEARUPDATE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("FOOTERYEARUPDATE_APIKEY"),
         }
         client = FooterYearUpdateSDK(merged_opts)
         return {
