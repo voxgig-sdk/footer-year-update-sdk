@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://getfullyear.com/api",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,49 +29,49 @@ def make_config():
       "year": {
         "fields": [
           {
+            "active": True,
             "name": "sponsored_by",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "year",
             "req": True,
             "type": "`$INTEGER`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "year_string",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 2,
           },
         ],
         "name": "year",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/year",
                 "parts": [
                   "year",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
-                  "res": "`body`",
+                  "res": "`body.year`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },

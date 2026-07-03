@@ -62,12 +62,14 @@ function year_direct_setup(mockres)
   local env = runner.env_override({
     ["FOOTERYEARUPDATE_TEST_YEAR_ENTID"] = {},
     ["FOOTERYEARUPDATE_TEST_LIVE"] = "FALSE",
+    ["FOOTERYEARUPDATE_APIKEY"] = "NONE",
   })
 
   local live = env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["FOOTERYEARUPDATE_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -1,6 +1,11 @@
 # FooterYearUpdate TypeScript SDK
 
-The TypeScript SDK for the FooterYearUpdate API. Provides a type-safe, entity-oriented interface with full async/await support.
+
+
+The TypeScript SDK for the FooterYearUpdate API — a type-safe, entity-oriented client with full async/await support.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -17,7 +22,9 @@ loading a specific record.
 ```ts
 import { FooterYearUpdateSDK } from 'footer-year-update'
 
-const client = new FooterYearUpdateSDK({})
+const client = new FooterYearUpdateSDK({
+  apikey: process.env.FOOTER-YEAR-UPDATE_APIKEY,
+})
 ```
 
 ### 3. Load a year
@@ -80,7 +87,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new FooterYearUpdateSDK()
+const client = new FooterYearUpdateSDK({ apikey: '...' })
 const testClient = client.tester()
 ```
 
@@ -116,6 +123,7 @@ const logger = {
 }
 
 const client = new FooterYearUpdateSDK({
+  apikey: '...',
   extend: [logger],
 })
 ```
@@ -126,6 +134,7 @@ Create a `.env.local` file at the project root:
 
 ```
 FOOTER-YEAR-UPDATE_TEST_LIVE=TRUE
+FOOTER-YEAR-UPDATE_APIKEY=<your-key>
 ```
 
 Then run:
@@ -143,6 +152,7 @@ cd ts && npm test
 
 ```ts
 new FooterYearUpdateSDK(options?: {
+  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -153,6 +163,7 @@ new FooterYearUpdateSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

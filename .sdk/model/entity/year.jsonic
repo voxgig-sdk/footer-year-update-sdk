@@ -35,7 +35,7 @@ main: kit: entity: year: {
           ]
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.year`"
           }
         }
       ]

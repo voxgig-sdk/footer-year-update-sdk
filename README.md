@@ -1,20 +1,8 @@
 # FooterYearUpdate SDK
 
-Returns the current year as JSON so website footers can stay up to date without manual edits
+Footer Year Update API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Footer Year Update API
-
-The Footer Year Update API is a tiny single-purpose service provided by [GetFullYear](https://getfullyear.com/api). It exists to solve one problem: making sure the copyright year in a website footer stays current without anyone having to remember to bump it in January.
-
-What you get from the API:
-
-- `year` — the current year as an integer
-- `year_string` — the current year as a string
-- `sponsored_by` — a sponsorship message included with free-tier responses
-
-A single `GET` endpoint at `/year` returns the payload. No authentication is required for basic use. CORS is not enabled by default, so server-side calls (or a proxy) may be needed for direct browser use.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install footer-year-update-sdk
 luarocks install footer-year-update-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { FooterYearUpdateSDK } from 'footer-year-update'
 
-const client = new FooterYearUpdateSDK({})
+const client = new FooterYearUpdateSDK({
+  apikey: process.env.FOOTER-YEAR-UPDATE_APIKEY,
+})
 
+// Load year data
+const year = await client.Year().load({})
+console.log(year.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Year** | The current calendar year, returned by `GET /year` as a JSON object containing `year`, `year_string`, and `sponsored_by` fields. | `/year` |
+| **Year** |  | `/year` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from footeryearupdate_sdk import FooterYearUpdateSDK
 
-client = FooterYearUpdateSDK({})
+client = FooterYearUpdateSDK({
+    "apikey": os.environ.get("FOOTER-YEAR-UPDATE_APIKEY"),
+})
 
 
 # Load a specific year
-year, err = client.Year(None).load(
-    {"id": "example_id"}, None
-)
+year, err = client.Year().load({"id": "example_id"})
+print(year)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ year, err = client.Year(None).load(
 <?php
 require_once 'footeryearupdate_sdk.php';
 
-$client = new FooterYearUpdateSDK([]);
+$client = new FooterYearUpdateSDK([
+    "apikey" => getenv("FOOTER-YEAR-UPDATE_APIKEY"),
+]);
 
 
 // Load a specific year
-[$year, $err] = $client->Year(null)->load(
-    ["id" => "example_id"], null
-);
+[$year, $err] = $client->Year()->load(["id" => "example_id"]);
+print_r($year);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new FooterYearUpdateSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/footer-year-update-sdk/go"
 
-client := sdk.NewFooterYearUpdateSDK(map[string]any{})
+client := sdk.NewFooterYearUpdateSDK(map[string]any{
+    "apikey": os.Getenv("FOOTER-YEAR-UPDATE_APIKEY"),
+})
 
+// Load year data
+year, err := client.Year(nil).Load(map[string]any{}, nil)
+fmt.Println(year)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewFooterYearUpdateSDK(map[string]any{})
 ```ruby
 require_relative "FooterYearUpdate_sdk"
 
-client = FooterYearUpdateSDK.new({})
+client = FooterYearUpdateSDK.new({
+  "apikey" => ENV["FOOTER-YEAR-UPDATE_APIKEY"],
+})
 
 
 # Load a specific year
-year, err = client.Year(nil).load(
-  { "id" => "example_id" }, nil
-)
+year, err = client.Year().load({ "id" => "example_id" })
+puts year
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ year, err = client.Year(nil).load(
 ```lua
 local sdk = require("footer-year-update_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("FOOTER-YEAR-UPDATE_APIKEY"),
+})
 
 
 -- Load a specific year
-local year, err = client:Year(nil):load(
-  { id = "example_id" }, nil
-)
+local year, err = client:Year():load({ id = "example_id" })
+print(year)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.Year().load({ id: 'test01' })
 ### Python
 
 ```python
-client = FooterYearUpdateSDK.test(None, None)
-result, err = client.Year(None).load(
-    {"id": "test01"}, None
-)
+client = FooterYearUpdateSDK.test()
+result, err = client.Year().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = FooterYearUpdateSDK::test(null, null);
-[$result, $err] = $client->Year(null)->load(
-    ["id" => "test01"], null
-);
+$client = FooterYearUpdateSDK::test();
+[$result, $err] = $client->Year()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Year(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.Year(nil).Load(
 ### Ruby
 
 ```ruby
-client = FooterYearUpdateSDK.test(nil, nil)
-result, err = client.Year(nil).load(
-  { "id" => "test01" }, nil
-)
+client = FooterYearUpdateSDK.test
+result, err = client.Year().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Year(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Year():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,10 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Footer Year Update API
-
-- Upstream: [https://getfullyear.com/api](https://getfullyear.com/api)
 
 ---
 

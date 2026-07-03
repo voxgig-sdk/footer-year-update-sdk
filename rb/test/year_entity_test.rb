@@ -82,6 +82,7 @@ def year_basic_setup(extra)
     "FOOTERYEARUPDATE_TEST_YEAR_ENTID" => idmap,
     "FOOTERYEARUPDATE_TEST_LIVE" => "FALSE",
     "FOOTERYEARUPDATE_TEST_EXPLAIN" => "FALSE",
+    "FOOTERYEARUPDATE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def year_basic_setup(extra)
   if env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["FOOTERYEARUPDATE_APIKEY"],
       },
       extra || {},
     ])

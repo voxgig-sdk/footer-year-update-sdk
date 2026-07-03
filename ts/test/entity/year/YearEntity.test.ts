@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'FOOTER_YEAR_UPDATE_TEST_YEAR_ENTID': idmap,
     'FOOTER_YEAR_UPDATE_TEST_LIVE': 'FALSE',
     'FOOTER_YEAR_UPDATE_TEST_EXPLAIN': 'FALSE',
+    'FOOTER_YEAR_UPDATE_APIKEY': 'NONE',
   })
 
   idmap = env['FOOTER_YEAR_UPDATE_TEST_YEAR_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new FooterYearUpdateSDK(merge([
       {
+        apikey: env.FOOTER_YEAR_UPDATE_APIKEY,
       },
       extra
     ]))

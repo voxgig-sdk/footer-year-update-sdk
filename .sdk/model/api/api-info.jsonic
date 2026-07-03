@@ -18,22 +18,7 @@ main: {
       termsOfService: "https://getfullyear.com"
       title: "Footer Year Update API"
       version: "1.0.0"
-      tagline: "Returns the current year as JSON so website footers can stay up to date without manual edits"
-      homepage: "https://getfullyear.com/api"
-      docs_url: "https://getfullyear.com/api"
-      about_md: `The Footer Year Update API is a tiny single-purpose service provided by [GetFullYear](https://getfullyear.com/api). It exists to solve one problem: making sure the copyright year in a website footer stays current without anyone having to remember to bump it in January.
-
-What you get from the API:
-
-- \`year\` — the current year as an integer
-- \`year_string\` — the current year as a string
-- \`sponsored_by\` — a sponsorship message included with free-tier responses
-
-A single \`GET\` endpoint at \`/year\` returns the payload. No authentication is required for basic use. CORS is not enabled by default, so server-side calls (or a proxy) may be needed for direct browser use.`
-      entity_desc: {
-        year: "The current calendar year, returned by `GET /year` as a JSON object containing `year`, `year_string`, and `sponsored_by` fields."
-      }
-      auth: false
     }
   }
 }
+
