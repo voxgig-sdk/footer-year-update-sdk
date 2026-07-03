@@ -10,7 +10,7 @@ The PHP SDK for the FooterYearUpdate API — an entity-oriented client using PHP
 
 ## Install
 ```bash
-composer require voxgig/footer-year-update-sdk
+composer require voxgig-sdk/footer-year-update
 ```
 
 

@@ -10,13 +10,13 @@ The Ruby SDK for the FooterYearUpdate API — an entity-oriented client using id
 
 ## Install
 ```bash
-gem install footer-year-update-sdk
+gem install voxgig-sdk-footer-year-update
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "footer-year-update-sdk"
+gem "voxgig-sdk-footer-year-update"
 ```
 
 Then run:

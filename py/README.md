@@ -10,7 +10,7 @@ The Python SDK for the FooterYearUpdate API — an entity-oriented client follow
 
 ## Install
 ```bash
-pip install footer-year-update-sdk
+pip install voxgig-sdk-footer-year-update
 ```
 
 Or install from source:

@@ -10,7 +10,7 @@ The Lua SDK for the FooterYearUpdate API — an entity-oriented client using Lua
 
 ## Install
 ```bash
-luarocks install footer-year-update-sdk
+luarocks install voxgig-sdk-footer-year-update
 ```
 
 If the module is not yet published, add the source directory to

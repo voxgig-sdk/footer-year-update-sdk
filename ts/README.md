@@ -10,7 +10,7 @@ The TypeScript SDK for the FooterYearUpdate API — a type-safe, entity-oriented
 
 ## Install
 ```bash
-npm install footer-year-update
+npm install @voxgig-sdk/footer-year-update
 ```
 ## Tutorial: your first API call
 

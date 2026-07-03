@@ -8,12 +8,14 @@ source = {
   dir = "footer-year-update-sdk/lua"
 }
 description = {
-  summary = "FooterYearUpdate SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Footer Year Update public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/footer-year-update-sdk",
+  issues_url = "https://github.com/voxgig-sdk/footer-year-update-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "footer-year-update" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
