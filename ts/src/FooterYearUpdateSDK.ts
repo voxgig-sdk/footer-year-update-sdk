@@ -2,6 +2,8 @@
 
 import { YearEntity } from './entity/YearEntity'
 
+export type * from './FooterYearUpdateTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class FooterYearUpdateSDK {
 
 
 
+  _year?: YearEntity
+
+  // Idiomatic facade: `client.year.list()` / `client.year.load({ id })`.
+  get year(): YearEntity {
+    return (this._year ??= new YearEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.year` instead. */
   Year(data?: any) {
     const self = this
     return new YearEntity(self,data)

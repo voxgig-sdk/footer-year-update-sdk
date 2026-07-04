@@ -15,9 +15,6 @@ module FooterYearUpdateConfig
       },
       "options" => {
         "base" => "https://getfullyear.com/api",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

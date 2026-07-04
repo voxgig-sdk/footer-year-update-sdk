@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Year,
+  YearLoadMatch,
+} from '../FooterYearUpdateTypes'
 
 // TODO: needs Entity superclass
-class YearEntity extends FooterYearUpdateEntityBase {
+class YearEntity extends FooterYearUpdateEntityBase<Year> {
 
   constructor(client: FooterYearUpdateSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class YearEntity extends FooterYearUpdateEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: YearLoadMatch, ctrl?: Control): Promise<Year> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class YearEntity extends FooterYearUpdateEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Year> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

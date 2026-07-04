@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch YearLoadMatch
+---@param ctrl? table
+---@return Year
+---@return string? err
 function YearEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

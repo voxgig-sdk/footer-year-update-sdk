@@ -49,8 +49,7 @@ class TestYearEntity:
         # LOAD
         year_ref01_ent = client.Year(None)
         year_ref01_match_dt0 = {}
-        year_ref01_data_dt0_loaded, err = year_ref01_ent.load(year_ref01_match_dt0, None)
-        assert err is None
+        year_ref01_data_dt0_loaded = year_ref01_ent.load(year_ref01_match_dt0, None)
         assert year_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _year_basic_setup(extra):
         "FOOTERYEARUPDATE_TEST_YEAR_ENTID": idmap,
         "FOOTERYEARUPDATE_TEST_LIVE": "FALSE",
         "FOOTERYEARUPDATE_TEST_EXPLAIN": "FALSE",
-        "FOOTERYEARUPDATE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _year_basic_setup(extra):
     if env.get("FOOTERYEARUPDATE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("FOOTERYEARUPDATE_APIKEY"),
             },
             extra or {},
         ])

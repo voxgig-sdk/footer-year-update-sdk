@@ -245,6 +245,9 @@ func (sdk *FooterYearUpdateSDK) Direct(fetchargs map[string]any) (map[string]any
 }
 
 
+// Year returns a Year entity bound to this client.
+// Idiomatic usage: client.Year(nil).List(nil, nil) or
+// client.Year(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FooterYearUpdateSDK) Year(data map[string]any) FooterYearUpdateEntity {
 	return NewYearEntityFunc(sdk, data)
 }

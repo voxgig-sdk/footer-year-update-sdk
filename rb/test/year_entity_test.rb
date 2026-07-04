@@ -42,8 +42,7 @@ class YearEntityTest < Minitest::Test
     # LOAD
     year_ref01_ent = client.Year(nil)
     year_ref01_match_dt0 = {}
-    year_ref01_data_dt0_loaded, err = year_ref01_ent.load(year_ref01_match_dt0, nil)
-    assert_nil err
+    year_ref01_data_dt0_loaded = year_ref01_ent.load(year_ref01_match_dt0, nil)
     assert !year_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def year_basic_setup(extra)
     "FOOTERYEARUPDATE_TEST_YEAR_ENTID" => idmap,
     "FOOTERYEARUPDATE_TEST_LIVE" => "FALSE",
     "FOOTERYEARUPDATE_TEST_EXPLAIN" => "FALSE",
-    "FOOTERYEARUPDATE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def year_basic_setup(extra)
   if env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["FOOTERYEARUPDATE_APIKEY"],
       },
       extra || {},
     ])

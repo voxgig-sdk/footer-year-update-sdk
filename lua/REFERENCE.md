@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## YearEntity
 
 ```lua
-local year = client:Year(nil)
+local year = client:year(nil)
 ```
 
 ### Fields
@@ -102,7 +101,7 @@ local year = client:Year(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Year():load({ id = "year_id" })
+local result, err = client:year():load({ id = "year_id" })
 ```
 
 ### Common Methods
