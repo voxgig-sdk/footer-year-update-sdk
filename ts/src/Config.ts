@@ -93,7 +93,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body.year`"
+                "res": "`body`"
               },
               "index$": 0
             }

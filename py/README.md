@@ -33,10 +33,12 @@ client = FooterYearUpdateSDK()
 
 ### 3. Load a year
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.year.load({"id": "example_id"})
-    print(result)
+    year = client.Year().load({"id": "example_id"})
+    print(year)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FooterYearUpdateSDK.test()
 
-result = client.year.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+year = client.Year().load({"id": "test01"})
+# year contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -220,7 +223,7 @@ API path: `/year`
 
 ### Year
 
-Create an instance: `const year = client.year`
+Create an instance: `year = client.Year()`
 
 #### Operations
 
@@ -238,8 +241,8 @@ Create an instance: `const year = client.year`
 
 #### Example: Load
 
-```ts
-const year = await client.year.load({ id: 'year_id' })
+```python
+year = client.Year().load({"id": "year_id"})
 ```
 
 
@@ -313,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-year = client.year
+year = client.Year()
 year.load({"id": "example_id"})
 
 # year.data_get() now returns the loaded year data

@@ -233,10 +233,10 @@ class FooterYearUpdateSDK
 
     private $_year = null;
 
-    // Idiomatic facade: $client->year()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Year() (PHP method
-    // names are case-insensitive).
-    public function year($data = null)
+    // Canonical facade: $client->Year()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->year()
+    // resolves here too.
+    public function Year($data = null)
     {
         require_once __DIR__ . '/entity/year_entity.php';
         if ($data === null) {

@@ -63,7 +63,7 @@ local function make_config()
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body.year`",
+                  ["res"] = "`body`",
                 },
                 ["index$"] = 0,
               },

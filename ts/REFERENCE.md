@@ -109,7 +109,7 @@ Alias for `FooterYearUpdateSDK.test()`.
 ## YearEntity
 
 ```ts
-const year = client.year
+const year = client.Year()
 ```
 
 ### Fields
@@ -127,7 +127,7 @@ const year = client.year
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.year.load({ id: 'year_id' })
+const result = await client.Year().load({ id: 'year_id' })
 ```
 
 ### Common Methods

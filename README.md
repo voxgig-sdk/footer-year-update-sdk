@@ -26,9 +26,9 @@ import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update'
 
 const client = new FooterYearUpdateSDK()
 
-// Load year data
-const year = await client.year.load({})
-console.log(year.data)
+// Load year data (returns a Year)
+const year = await client.Year().load()
+console.log(year)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from footeryearupdate_sdk import FooterYearUpdateSDK
 client = FooterYearUpdateSDK()
 
 
-# Load a specific year
-year = client.year.load({"id": "example_id"})
+# Load a specific year (returns the record, raises on error)
+year = client.Year().load({"id": "example_id"})
 print(year)
 ```
 
@@ -98,8 +98,8 @@ require_once 'footeryearupdate_sdk.php';
 $client = new FooterYearUpdateSDK();
 
 
-// Load a specific year
-$year = $client->year()->load(["id" => "example_id"]);
+// Load a specific year (returns the bare record; throws on error)
+$year = $client->Year()->load(["id" => "example_id"]);
 print_r($year);
 ```
 
@@ -123,8 +123,8 @@ require_relative "FooterYearUpdate_sdk"
 client = FooterYearUpdateSDK.new
 
 
-# Load a specific year
-year = client.year.load({ "id" => "example_id" })
+# Load a specific year (returns the bare record; raises on error)
+year = client.Year.load({ "id" => "example_id" })
 puts year
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific year
-local year, err = client:year():load({ id = "example_id" })
+local year, err = client:Year():load({ id = "example_id" })
 print(year)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = FooterYearUpdateSDK.test()
-const result = await client.year.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const year = await client.Year().load({ id: 'test01' })
+// year is a bare Year populated with mock data
+console.log(year)
 ```
 
 ### Python
 
 ```python
 client = FooterYearUpdateSDK.test()
-result = client.year.load({"id": "test01"})
+year = client.Year().load({"id": "test01"})
+print(year)
 ```
 
 ### PHP
 
 ```php
-$client = FooterYearUpdateSDK::test();
-$result = $client->year()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = FooterYearUpdateSDK::test([
+    "entity" => ["year" => ["test01" => ["id" => "test01"]]],
+]);
+$year = $client->Year()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Year(nil).Load(
 ### Ruby
 
 ```ruby
-client = FooterYearUpdateSDK.test
-result = client.year.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = FooterYearUpdateSDK.test({
+  "entity" => { "year" => { "test01" => { "id" => "test01" } } },
+})
+year = client.Year.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:year():load({ id = "test01" })
+local result, err = client:Year():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

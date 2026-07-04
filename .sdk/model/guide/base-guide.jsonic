@@ -8,7 +8,6 @@ guide: {
   entity: year: {
     path: "/year": {
       op: load: method: *GET
-      op: load: transform: res: *("`body.year`")|top
     }
   }
 

@@ -204,14 +204,7 @@ class FooterYearUpdateSDK {
 
 
 
-  _year?: YearEntity
-
-  // Idiomatic facade: `client.year.list()` / `client.year.load({ id })`.
-  get year(): YearEntity {
-    return (this._year ??= new YearEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.year` instead. */
+  // Entity access: `client.Year().list()` / `client.Year().load({ id })`.
   Year(data?: any) {
     const self = this
     return new YearEntity(self,data)

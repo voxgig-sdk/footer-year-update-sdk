@@ -220,25 +220,15 @@ class FooterYearUpdateSDK:
         }
 
 
-    @property
-    def year(self):
-        """Idiomatic facade: client.year.list() / client.year.load({"id": ...})."""
-        from entity.year_entity import YearEntity
-        cached = getattr(self, "_year", None)
-        if cached is None:
-            cached = YearEntity(self, None)
-            self._year = cached
-        return cached
-
-    def Year(self, data=None):
-        # Deprecated: use client.year instead.
+    def Year(self, data=None) -> "YearEntity":
+        """Entity factory: client.Year().list({}) / client.Year().load({"id": ...})."""
         from entity.year_entity import YearEntity
         return YearEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "FooterYearUpdateSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class FooterYearUpdateSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.year_entity import YearEntity

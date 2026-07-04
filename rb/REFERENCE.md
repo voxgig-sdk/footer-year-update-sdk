@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## YearEntity
 
 ```ruby
-year = client.year
+year = client.Year
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ year = client.year
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.year.load({ "id" => "year_id" })
+result = client.Year.load({ "id" => "year_id" })
 ```
 
 ### Common Methods

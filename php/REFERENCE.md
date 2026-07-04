@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## YearEntity
 
 ```php
-$year = $client->year();
+$year = $client->Year();
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ $year = $client->year();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->year()->load(["id" => "year_id"]);
+$result = $client->Year()->load(["id" => "year_id"]);
 ```
 
 ### Common Methods

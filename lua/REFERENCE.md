@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## YearEntity
 
 ```lua
-local year = client:year(nil)
+local year = client:Year(nil)
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ local year = client:year(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:year():load({ id = "year_id" })
+local result, err = client:Year():load({ id = "year_id" })
 ```
 
 ### Common Methods

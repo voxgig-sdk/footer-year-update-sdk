@@ -33,9 +33,10 @@ $client = new FooterYearUpdateSDK();
 
 ```php
 try {
-    $result = $client->year()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Year record (throws on error).
+    $year = $client->Year()->load(["id" => "example_id"]);
+    print_r($year);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = FooterYearUpdateSDK::test();
+$client = FooterYearUpdateSDK::test([
+    "entity" => ["year" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->year()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$year = $client->Year()->load(["id" => "test01"]);
+print_r($year);
 ```
 
 ### Use a custom fetch function
@@ -225,7 +230,7 @@ API path: `/year`
 
 ### Year
 
-Create an instance: `const year = client.year`
+Create an instance: `$year = $client->Year();`
 
 #### Operations
 
@@ -243,8 +248,9 @@ Create an instance: `const year = client.year`
 
 #### Example: Load
 
-```ts
-const year = await client.year.load({ id: 'year_id' })
+```php
+// load() returns the bare Year record (throws on error).
+$year = $client->Year()->load(["id" => "year_id"]);
 ```
 
 
@@ -319,7 +325,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$year = $client->year();
+$year = $client->Year();
 $year->load(["id" => "example_id"]);
 
 // $year->dataGet() now returns the loaded year data

@@ -208,13 +208,7 @@ class FooterYearUpdateSDK
   end
 
 
-  # Idiomatic facade: client.year.list / client.year.load({ "id" => ... })
-  def year
-    require_relative 'entity/year_entity'
-    @year ||= YearEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.year instead.
+  # Canonical facade: client.Year.list / client.Year.load({ "id" => ... })
   def Year(data = nil)
     require_relative 'entity/year_entity'
     YearEntity.new(self, data)

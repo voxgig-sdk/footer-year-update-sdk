@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:year():list() / client:year():load({ id = ... })
-function FooterYearUpdateSDK:year(data)
+-- Idiomatic facade: client:Year():list() / client:Year():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FooterYearUpdateSDK:Year(data)
   local EntityMod = require("entity.year_entity")
   if data == nil then
     if self._year == nil then
@@ -253,12 +254,6 @@ function FooterYearUpdateSDK:year(data)
     end
     return self._year
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:year() instead.
-function FooterYearUpdateSDK:Year(data)
-  local EntityMod = require("entity.year_entity")
   return EntityMod.new(self, data)
 end
 
