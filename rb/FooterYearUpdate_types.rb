@@ -25,7 +25,7 @@ Year = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Year#load (any subset of Year fields).
+# Request payload for Year#load.
 #
 # @!attribute [rw] sponsored_by
 #   @return [String, nil]

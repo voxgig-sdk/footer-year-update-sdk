@@ -15,8 +15,7 @@ type Year struct {
 	YearString string `json:"year_string"`
 }
 
-// YearLoadMatch mirrors the year fields as an all-optional match
-// filter (Go analog of Partial<Year>).
+// YearLoadMatch is the typed request payload for Year.LoadTyped.
 type YearLoadMatch struct {
 	SponsoredBy *string `json:"sponsored_by,omitempty"`
 	Year *int `json:"year,omitempty"`

@@ -221,7 +221,7 @@ class FooterYearUpdateSDK:
 
 
     def Year(self, data=None) -> "YearEntity":
-        """Entity factory: client.Year().list({}) / client.Year().load({"id": ...})."""
+        """Entity factory: client.Year().list() / client.Year().load({"id": ...})."""
         from entity.year_entity import YearEntity
         return YearEntity(self, data)
 

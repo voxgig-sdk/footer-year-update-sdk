@@ -20,7 +20,7 @@ class Year
     public string $year_string;
 }
 
-/** Match filter for Year#load (any subset of Year fields). */
+/** Request payload for Year#load. */
 class YearLoadMatch
 {
     public ?string $sponsored_by = null;

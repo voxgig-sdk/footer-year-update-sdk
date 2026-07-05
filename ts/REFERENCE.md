@@ -116,9 +116,9 @@ const year = client.Year()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | ``$STRING`` | Yes |  |
-| `year` | ``$INTEGER`` | Yes |  |
-| `year_string` | ``$STRING`` | Yes |  |
+| `sponsored_by` | `string` | Yes |  |
+| `year` | `number` | Yes |  |
+| `year_string` | `string` | Yes |  |
 
 ### Operations
 
@@ -127,7 +127,7 @@ const year = client.Year()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Year().load({ id: 'year_id' })
+const result = await client.Year().load()
 ```
 
 ### Common Methods

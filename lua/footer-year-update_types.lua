@@ -12,6 +12,9 @@
 ---@field year_string string
 
 ---@class YearLoadMatch
+---@field sponsored_by? string
+---@field year? number
+---@field year_string? string
 
 local M = {}
 

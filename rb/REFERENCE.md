@@ -8,7 +8,7 @@ Complete API reference for the FooterYearUpdate Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'footer-year-update_sdk'
+require_relative 'FooterYearUpdate_sdk'
 
 client = FooterYearUpdateSDK.new(options)
 ```
@@ -93,9 +93,9 @@ year = client.Year
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | ``$STRING`` | Yes |  |
-| `year` | ``$INTEGER`` | Yes |  |
-| `year_string` | ``$STRING`` | Yes |  |
+| `sponsored_by` | `String` | Yes |  |
+| `year` | `Integer` | Yes |  |
+| `year_string` | `String` | Yes |  |
 
 ### Operations
 
@@ -104,7 +104,7 @@ year = client.Year
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Year.load({ "id" => "year_id" })
+result = client.Year.load()
 ```
 
 ### Common Methods

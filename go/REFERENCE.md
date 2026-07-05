@@ -97,9 +97,9 @@ year := client.Year(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | ``$STRING`` | Yes |  |
-| `year` | ``$INTEGER`` | Yes |  |
-| `year_string` | ``$STRING`` | Yes |  |
+| `sponsored_by` | `string` | Yes |  |
+| `year` | `int` | Yes |  |
+| `year_string` | `string` | Yes |  |
 
 ### Operations
 
@@ -108,7 +108,7 @@ year := client.Year(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Year(nil).Load(map[string]any{"id": "year_id"}, nil)
+result, err := client.Year(nil).Load(nil, nil)
 ```
 
 ### Common Methods

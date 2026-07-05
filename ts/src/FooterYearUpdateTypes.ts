@@ -11,5 +11,9 @@ export interface Year {
   year_string: string
 }
 
-export type YearLoadMatch = Partial<Year>
+export interface YearLoadMatch {
+  sponsored_by?: string
+  year?: number
+  year_string?: string
+}
 

@@ -90,9 +90,9 @@ local year = client:Year(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | ``$STRING`` | Yes |  |
-| `year` | ``$INTEGER`` | Yes |  |
-| `year_string` | ``$STRING`` | Yes |  |
+| `sponsored_by` | `string` | Yes |  |
+| `year` | `number` | Yes |  |
+| `year_string` | `string` | Yes |  |
 
 ### Operations
 
@@ -101,7 +101,7 @@ local year = client:Year(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Year():load({ id = "year_id" })
+local result, err = client:Year():load()
 ```
 
 ### Common Methods

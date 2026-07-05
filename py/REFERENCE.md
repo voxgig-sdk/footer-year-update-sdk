@@ -8,7 +8,7 @@ Complete API reference for the FooterYearUpdate Python SDK.
 ### Constructor
 
 ```python
-from footer-year-update_sdk import FooterYearUpdateSDK
+from footeryearupdate_sdk import FooterYearUpdateSDK
 
 client = FooterYearUpdateSDK(options)
 ```
@@ -87,9 +87,9 @@ year = client.Year()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | ``$STRING`` | Yes |  |
-| `year` | ``$INTEGER`` | Yes |  |
-| `year_string` | ``$STRING`` | Yes |  |
+| `sponsored_by` | `str` | Yes |  |
+| `year` | `int` | Yes |  |
+| `year_string` | `str` | Yes |  |
 
 ### Operations
 
@@ -98,7 +98,7 @@ year = client.Year()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Year().load({"id": "year_id"})
+result = client.Year().load()
 ```
 
 ### Common Methods
