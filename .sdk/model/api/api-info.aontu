@@ -16,10 +16,10 @@ main: {
           url: "https://getfullyear.com/api"
         }
       ]
+      summary: "This API automatically retrieves the current year for website footers, eliminating the need for manual updates each January."
       termsOfService: "https://getfullyear.com"
       title: "Footer Year Update API"
       version: "1.0.0"
+      website: "https://getfullyear.com"
     }
   }
-}
-
