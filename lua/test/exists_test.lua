@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- FooterYearUpdate SDK exists test
 
 local sdk = require("footer-year-update_sdk")
 
