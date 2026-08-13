@@ -43,8 +43,8 @@ class FooterYearUpdateTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('FOOTERYEARUPDATE_TEST_LIVE');
-        $override = self::getenv('FOOTERYEARUPDATE_TEST_OVERRIDE');
+        $live = self::getenv('FOOTER_YEAR_UPDATE_TEST_LIVE');
+        $override = self::getenv('FOOTER_YEAR_UPDATE_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class FooterYearUpdateTestRunner
             }
         }
 
-        $explain = self::getenv('FOOTERYEARUPDATE_TEST_EXPLAIN');
+        $explain = self::getenv('FOOTER_YEAR_UPDATE_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['FOOTERYEARUPDATE_TEST_EXPLAIN'] = $explain;
+            $m['FOOTER_YEAR_UPDATE_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import FooterYearUpdateSDK
-from core.error import FooterYearUpdateError
-from core.result import FooterYearUpdateResult
-from core.response import FooterYearUpdateResponse
-from core.spec import FooterYearUpdateSpec
-from feature.base_feature import FooterYearUpdateBaseFeature
+from projectname_sdk.core.error import FooterYearUpdateError
+from projectname_sdk.core.result import FooterYearUpdateResult
+from projectname_sdk.core.response import FooterYearUpdateResponse
+from projectname_sdk.core.spec import FooterYearUpdateSpec
+from projectname_sdk.feature.base_feature import FooterYearUpdateBaseFeature
 
 
 def _client():

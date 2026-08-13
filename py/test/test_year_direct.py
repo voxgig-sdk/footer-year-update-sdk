@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from footeryearupdate_sdk.utility.voxgig_struct import voxgig_struct as vs
 from footeryearupdate_sdk import FooterYearUpdateSDK
-from core import helpers
+from footeryearupdate_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _year_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "FOOTERYEARUPDATE_TEST_YEAR_ENTID": {},
-        "FOOTERYEARUPDATE_TEST_LIVE": "FALSE",
+        "FOOTER_YEAR_UPDATE_TEST_YEAR_ENTID": {},
+        "FOOTER_YEAR_UPDATE_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("FOOTERYEARUPDATE_TEST_LIVE") == "TRUE"
+    live = env.get("FOOTER_YEAR_UPDATE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

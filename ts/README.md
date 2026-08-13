@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = FooterYearUpdateSDK.test()
 
 const year = await client.Year().load()
-// year is a bare entity populated with mock response data
+// year is the entity, populated with mock response data
+// — call year.data() for the record itself
 console.log(year)
 ```
 

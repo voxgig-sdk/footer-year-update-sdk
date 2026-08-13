@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ FooterYearUpdateUtility::setRegistrar(function (FooterYearUpdateUtility $u): voi
     $u->prepare_params = [FooterYearUpdatePrepareParams::class, 'call'];
     $u->prepare_path = [FooterYearUpdatePreparePath::class, 'call'];
     $u->prepare_query = [FooterYearUpdatePrepareQuery::class, 'call'];
+    $u->graphql_body = [FooterYearUpdateGraphql::class, 'body'];
+    $u->graphql_errors = [FooterYearUpdateGraphql::class, 'errors'];
     $u->result_basic = [FooterYearUpdateResultBasic::class, 'call'];
     $u->result_body = [FooterYearUpdateResultBody::class, 'call'];
     $u->result_headers = [FooterYearUpdateResultHeaders::class, 'call'];

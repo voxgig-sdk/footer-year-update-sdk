@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# FooterYearUpdate SDK exists test
 
 import pytest
 from footeryearupdate_sdk import FooterYearUpdateSDK

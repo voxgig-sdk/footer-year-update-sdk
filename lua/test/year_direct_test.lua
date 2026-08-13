@@ -60,11 +60,11 @@ function year_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["FOOTERYEARUPDATE_TEST_YEAR_ENTID"] = {},
-    ["FOOTERYEARUPDATE_TEST_LIVE"] = "FALSE",
+    ["FOOTER_YEAR_UPDATE_TEST_YEAR_ENTID"] = {},
+    ["FOOTER_YEAR_UPDATE_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["FOOTERYEARUPDATE_TEST_LIVE"] == "TRUE"
+  local live = env["FOOTER_YEAR_UPDATE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

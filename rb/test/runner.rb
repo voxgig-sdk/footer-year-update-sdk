@@ -23,8 +23,8 @@ module FooterYearUpdateTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("FOOTERYEARUPDATE_TEST_LIVE")
-    override = getenv("FOOTERYEARUPDATE_TEST_OVERRIDE")
+    live = getenv("FOOTER_YEAR_UPDATE_TEST_LIVE")
+    override = getenv("FOOTER_YEAR_UPDATE_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module FooterYearUpdateTestRunner
       end
     end
 
-    explain = getenv("FOOTERYEARUPDATE_TEST_EXPLAIN")
-    m["FOOTERYEARUPDATE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("FOOTER_YEAR_UPDATE_TEST_EXPLAIN")
+    m["FOOTER_YEAR_UPDATE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

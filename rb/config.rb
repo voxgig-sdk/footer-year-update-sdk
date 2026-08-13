@@ -56,6 +56,7 @@ module FooterYearUpdateConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/year",
                   "parts" => [

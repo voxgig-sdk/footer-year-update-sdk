@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ FooterYearUpdateUtility.registrar = ->(u) {
   u.prepare_params = FooterYearUpdateUtilities::PrepareParams
   u.prepare_path = FooterYearUpdateUtilities::PreparePath
   u.prepare_query = FooterYearUpdateUtilities::PrepareQuery
+  u.graphql_body = FooterYearUpdateUtilities::GraphqlBody
+  u.graphql_errors = FooterYearUpdateUtilities::GraphqlErrors
   u.result_basic = FooterYearUpdateUtilities::ResultBasic
   u.result_body = FooterYearUpdateUtilities::ResultBody
   u.result_headers = FooterYearUpdateUtilities::ResultHeaders

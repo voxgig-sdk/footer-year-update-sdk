@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import FooterYearUpdateControl
-from core.error import FooterYearUpdateError
-from core.result import FooterYearUpdateResult
-from core.spec import FooterYearUpdateSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import FooterYearUpdateControl
+from projectname_sdk.core.error import FooterYearUpdateError
+from projectname_sdk.core.result import FooterYearUpdateResult
+from projectname_sdk.core.spec import FooterYearUpdateSpec
 
 
 # True when this SDK was generated with the named feature.

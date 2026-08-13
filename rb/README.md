@@ -34,7 +34,7 @@ client = FooterYearUpdateSDK.new
 
 ```ruby
 begin
-  # load returns the bare Year record (raises on error).
+  # load returns the ENTITY — call data_get for the Year record (raises on error).
   year = client.Year.load()
   puts year
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = FooterYearUpdateSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 year = client.Year.load()
 puts year
 ```
@@ -268,7 +269,7 @@ Create an instance: `year = client.Year`
 #### Example: Load
 
 ```ruby
-# load returns the bare Year record (raises on error).
+# load returns the ENTITY — call data_get for the Year record (raises on error).
 year = client.Year.load()
 ```
 

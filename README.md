@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = FooterYearUpdateSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = FooterYearUpdateSDK.test({
+  entity: {
+    year: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const year = await client.Year().load()
-// year is a bare Year populated with mock data
+// year is the Year entity, populated with mock data
+// — call year.data() for the record itself
 console.log(year)
 ```
 
@@ -182,7 +191,7 @@ require_once 'footeryearupdate_sdk.php';
 $client = new FooterYearUpdateSDK();
 
 
-// Load a specific year (returns the bare record; throws on error)
+// Load a specific year (returns the ENTITY; call data_get() for the record; throws on error)
 $year = $client->Year()->load();
 print_r($year);
 ```
@@ -210,7 +219,7 @@ require_relative "FooterYearUpdate_sdk"
 client = FooterYearUpdateSDK.new
 
 
-# Load a specific year (returns the bare record; raises on error)
+# Load a specific year (returns the ENTITY; call data_get for the record)
 year = client.Year.load()
 puts year
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://getfullyear.com](https://getfullyear.com)
 

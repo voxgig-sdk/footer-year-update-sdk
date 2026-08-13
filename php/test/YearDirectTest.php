@@ -65,11 +65,11 @@ function year_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "FOOTERYEARUPDATE_TEST_YEAR_ENTID" => [],
-        "FOOTERYEARUPDATE_TEST_LIVE" => "FALSE",
+        "FOOTER_YEAR_UPDATE_TEST_YEAR_ENTID" => [],
+        "FOOTER_YEAR_UPDATE_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["FOOTERYEARUPDATE_TEST_LIVE"] === "TRUE";
+    $live = $env["FOOTER_YEAR_UPDATE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
