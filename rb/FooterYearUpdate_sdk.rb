@@ -28,7 +28,7 @@ class FooterYearUpdateSDK
     utility = FooterYearUpdateUtility.new
     @_utility = utility
 
-    config = FooterYearUpdateConfig.make_config
+    config = FooterYearUpdateConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

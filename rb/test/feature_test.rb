@@ -15,7 +15,7 @@ require_relative "../FooterYearUpdate_sdk"
 module FooterYearUpdateFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = FooterYearUpdateConfig.make_config["feature"]
+    f = FooterYearUpdateConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

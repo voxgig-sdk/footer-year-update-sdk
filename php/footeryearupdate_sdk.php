@@ -40,7 +40,7 @@ class FooterYearUpdateSDK
         $utility = new FooterYearUpdateUtility();
         $this->_utility = $utility;
 
-        $config = FooterYearUpdateConfig::make_config();
+        $config = FooterYearUpdateConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
