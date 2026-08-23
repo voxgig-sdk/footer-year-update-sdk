@@ -36,18 +36,21 @@
               "active": true,
               "name": "sponsored_by",
               "req": true,
+              "short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "year",
               "req": true,
+              "short": "The current year as an integer",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "year_string",
               "req": true,
+              "short": "The current year as a string",
               "type": "`$STRING`"
             }
           ],

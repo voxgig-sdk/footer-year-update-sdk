@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'FooterYearUpdate',
+        slug: "footer-year-update",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -57,16 +68,19 @@ class Config {
         {
           "name": "sponsored_by",
           "req": true,
+          "short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
           "type": "`$STRING`"
         },
         {
           "name": "year",
           "req": true,
+          "short": "The current year as an integer",
           "type": "`$INTEGER`"
         },
         {
           "name": "year_string",
           "req": true,
+          "short": "The current year as a string",
           "type": "`$STRING`"
         }
       ],

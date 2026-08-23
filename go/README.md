@@ -6,7 +6,7 @@ The Golang SDK for the FooterYearUpdate API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Year(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,9 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"sponsored_by"` |  |
-| `"year"` |  |
-| `"year_string"` |  |
+| `"sponsored_by"` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `"year"` | The current year as an integer |
+| `"year_string"` | The current year as a string |
 
 Operations: Load.
 
@@ -285,9 +285,9 @@ Create an instance: `year := client.Year(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `sponsored_by` | `string` |  |
-| `year` | `int` |  |
-| `year_string` | `string` |  |
+| `sponsored_by` | `string` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | `int` | The current year as an integer |
+| `year_string` | `string` | The current year as a string |
 
 #### Example: Load
 

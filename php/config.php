@@ -33,6 +33,9 @@ class FooterYearUpdateConfig
         return [
             "main" => [
                 "name" => "FooterYearUpdate",
+                "slug" => "footer-year-update",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,16 +59,19 @@ class FooterYearUpdateConfig
             [
               'name' => 'sponsored_by',
               'req' => true,
+              'short' => 'Sponsored message (required to be displayed/logged per Terms of Service for free tier users)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'year',
               'req' => true,
+              'short' => 'The current year as an integer',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'year_string',
               'req' => true,
+              'short' => 'The current year as a string',
               'type' => '`$STRING`',
             ],
           ],

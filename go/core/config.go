@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "FooterYearUpdate",
+			"slug": "footer-year-update",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,16 +37,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "sponsored_by",
 						"req": true,
+						"short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "year",
 						"req": true,
+						"short": "The current year as an integer",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "year_string",
 						"req": true,
+						"short": "The current year as a string",
 						"type": "`$STRING`",
 					},
 				},

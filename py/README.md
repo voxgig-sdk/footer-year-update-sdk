@@ -241,9 +241,9 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `sponsored_by` |  |
-| `year` |  |
-| `year_string` |  |
+| `sponsored_by` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | The current year as an integer |
+| `year_string` | The current year as a string |
 
 Operations: Load.
 
@@ -268,9 +268,9 @@ Create an instance: `year = client.Year()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `sponsored_by` | `str` |  |
-| `year` | `int` |  |
-| `year_string` | `str` |  |
+| `sponsored_by` | `str` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | `int` | The current year as an integer |
+| `year_string` | `str` | The current year as a string |
 
 #### Example: Load
 

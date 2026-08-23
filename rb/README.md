@@ -235,9 +235,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `sponsored_by` |  |
-| `year` |  |
-| `year_string` |  |
+| `sponsored_by` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | The current year as an integer |
+| `year_string` | The current year as a string |
 
 Operations: Load.
 
@@ -262,9 +262,9 @@ Create an instance: `year = client.Year`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `sponsored_by` | `String` |  |
-| `year` | `Integer` |  |
-| `year_string` | `String` |  |
+| `sponsored_by` | `String` | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | `Integer` | The current year as an integer |
+| `year_string` | `String` | The current year as a string |
 
 #### Example: Load
 

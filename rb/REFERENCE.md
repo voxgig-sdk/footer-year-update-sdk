@@ -93,9 +93,9 @@ year = client.Year
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | `String` | Yes |  |
-| `year` | `Integer` | Yes |  |
-| `year_string` | `String` | Yes |  |
+| `sponsored_by` | `String` | Yes | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | `Integer` | Yes | The current year as an integer |
+| `year_string` | `String` | Yes | The current year as a string |
 
 ### Operations
 

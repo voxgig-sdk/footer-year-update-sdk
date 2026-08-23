@@ -116,9 +116,9 @@ const year = client.Year()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `sponsored_by` | `string` | Yes |  |
-| `year` | `number` | Yes |  |
-| `year_string` | `string` | Yes |  |
+| `sponsored_by` | `string` | Yes | Sponsored message (required to be displayed/logged per Terms of Service for free tier users) |
+| `year` | `number` | Yes | The current year as an integer |
+| `year_string` | `string` | Yes | The current year as a string |
 
 ### Operations
 
