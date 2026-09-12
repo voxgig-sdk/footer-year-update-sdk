@@ -33,8 +33,10 @@ main: kit: entity: year: {
         {
           method: "GET"
           orig: "/year"
-          parts: [
-            "year"
+          segments: [
+            {
+              lit: "year"
+            }
           ]
           transform: {
             req: "`reqdata`"

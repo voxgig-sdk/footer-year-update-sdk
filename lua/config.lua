@@ -61,13 +61,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/year",
-                ["parts"] = {
-                  "year",
+                ["segments"] = {
+                  {
+                    ["lit"] = "year",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "year",
                 },
               },
             },
