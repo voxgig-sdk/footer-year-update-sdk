@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/footer-year-update",
+  "name": "@voxgig-sdk/footer-year-update-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Footer Year Update public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

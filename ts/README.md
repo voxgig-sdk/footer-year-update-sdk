@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update'
+import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update-sdk'
 
 const client = new FooterYearUpdateSDK()
 ```
@@ -405,7 +405,7 @@ footer-year-update/
 Import the SDK from the package root:
 
 ```ts
-import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update'
+import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update-sdk'
 ```
 
 ### Entity state

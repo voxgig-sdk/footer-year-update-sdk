@@ -105,7 +105,7 @@ local result, err = client:Year():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
+| TypeScript | `@voxgig-sdk/footer-year-update-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
 | Python | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
 | PHP | `voxgig-sdk/footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/footer-year-update-sdk/go` | `go get github.com/voxgig-sdk/footer-year-update-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Year():load()
 ### TypeScript
 
 ```ts
-import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update'
+import { FooterYearUpdateSDK } from '@voxgig-sdk/footer-year-update-sdk'
 
 const client = new FooterYearUpdateSDK()
 
