@@ -1,12 +1,18 @@
 # FooterYearUpdate SDK feature factory
 
 from footeryearupdate_sdk.feature.base_feature import FooterYearUpdateBaseFeature
+from footeryearupdate_sdk.feature.ratelimit_feature import FooterYearUpdateRatelimitFeature
+from footeryearupdate_sdk.feature.retry_feature import FooterYearUpdateRetryFeature
 from footeryearupdate_sdk.feature.test_feature import FooterYearUpdateTestFeature
+from footeryearupdate_sdk.feature.timeout_feature import FooterYearUpdateTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: FooterYearUpdateBaseFeature(),
+    "ratelimit": lambda: FooterYearUpdateRatelimitFeature(),
+    "retry": lambda: FooterYearUpdateRetryFeature(),
     "test": lambda: FooterYearUpdateTestFeature(),
+    "timeout": lambda: FooterYearUpdateTimeoutFeature(),
 }
 
 

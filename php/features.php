@@ -4,7 +4,10 @@ declare(strict_types=1);
 // FooterYearUpdate SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class FooterYearUpdateFeatures
@@ -14,8 +17,14 @@ class FooterYearUpdateFeatures
         switch ($name) {
             case "base":
                 return new FooterYearUpdateBaseFeature();
+            case "ratelimit":
+                return new FooterYearUpdateRatelimitFeature();
+            case "retry":
+                return new FooterYearUpdateRetryFeature();
             case "test":
                 return new FooterYearUpdateTestFeature();
+            case "timeout":
+                return new FooterYearUpdateTimeoutFeature();
             default:
                 return new FooterYearUpdateBaseFeature();
         }
@@ -31,7 +40,10 @@ class FooterYearUpdateFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

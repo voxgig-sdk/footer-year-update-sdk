@@ -31,6 +31,12 @@ main: kit: entity: year: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /year"
+            json: "{\"operationId\":\"getCurrentYear\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"success\":{\"value\":{\"sponsored_by\":\"Viagra: standing tall and proud\",\"year\":2025,\"year_string\":\"2025\"}}},\"schema\":{\"properties\":{\"sponsored_by\":{\"description\":\"Sponsored message (required to be displayed/logged per Terms of Service for free tier users)\",\"example\":\"Viagra: standing tall and proud\",\"type\":\"string\"},\"year\":{\"description\":\"The current year as an integer\",\"example\":2025,\"type\":\"integer\"},\"year_string\":{\"description\":\"The current year as a string\",\"example\":\"2025\",\"type\":\"string\"}},\"required\":[\"year\",\"year_string\",\"sponsored_by\"],\"type\":\"object\"}}},\"description\":\"Successful response with current year information\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error information\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"},\"503\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error information\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Service unavailable - may occur during year transitions or maintenance\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/year"
           segments: [
