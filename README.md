@@ -105,12 +105,12 @@ local result, err = client:Year():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/footer-year-update-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
-| Python | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
-| PHP | `voxgig-sdk/footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
+| TypeScript | `@voxgig-sdk/footer-year-update-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/tags) |
+| Python | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/tags) |
+| PHP | `voxgig-sdk/footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/footer-year-update-sdk/go` | `go get github.com/voxgig-sdk/footer-year-update-sdk/go@latest` |
-| Ruby | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
-| Lua | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/releases) |
+| Ruby | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/tags) |
+| Lua | `voxgig-sdk-footer-year-update` | publish pending — [install from git tag](https://github.com/voxgig-sdk/footer-year-update-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/footer-year-update-sdk/go-cli` | `go install github.com/voxgig-sdk/footer-year-update-sdk/go-cli/cmd/footer-year-update@latest` |
 | Go MCP server | `github.com/voxgig-sdk/footer-year-update-sdk/go-mcp` | `go get github.com/voxgig-sdk/footer-year-update-sdk/go-mcp@latest` |
 
