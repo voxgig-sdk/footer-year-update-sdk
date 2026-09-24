@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,21 +107,24 @@ class Config {
             "fields": [
                 {
                     "name": "sponsored_by",
+                    "title": "Sponsored By",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
-                    "type": "`$STRING`"
+                    "short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)"
                 },
                 {
                     "name": "year",
+                    "title": "Year",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "short": "The current year as an integer",
-                    "type": "`$INTEGER`"
+                    "short": "The current year as an integer"
                 },
                 {
                     "name": "year_string",
+                    "title": "Year String",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "The current year as a string",
-                    "type": "`$STRING`"
+                    "short": "The current year as a string"
                 }
             ],
             "name": "year",
@@ -138,7 +134,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/year",
@@ -147,14 +142,16 @@ class Config {
                                     "lit": "year"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "year"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "year"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }

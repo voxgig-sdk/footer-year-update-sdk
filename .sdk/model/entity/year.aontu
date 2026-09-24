@@ -1,0 +1,60 @@
+# Entity: year
+
+main: kit: entity: year: {
+
+  alias: field: {}
+
+  fields: {
+    sponsored_by: {
+      h: "Sponsored By"
+      n: "sponsored_by"
+      r: true
+      sh: "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)"
+      t: "`$STRING`"
+    }
+    year: {
+      h: "Year"
+      n: "year"
+      r: true
+      sh: "The current year as an integer"
+      t: "`$INTEGER`"
+    }
+    year_string: {
+      h: "Year String"
+      n: "year_string"
+      r: true
+      sh: "The current year as a string"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "year"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /year"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/year"
+          s: [
+            {
+              lit: "year"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

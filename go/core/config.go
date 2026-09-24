@@ -91,21 +91,24 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "sponsored_by",
+						"title": "Sponsored By",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "year",
+						"title": "Year",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "The current year as an integer",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "year_string",
+						"title": "Year String",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The current year as a string",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "year",
@@ -115,7 +118,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/year",
@@ -124,14 +126,16 @@ func MakeConfig() map[string]any {
 										"lit": "year",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"year",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"year",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

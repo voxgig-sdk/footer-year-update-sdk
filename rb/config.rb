@@ -99,21 +99,24 @@ module FooterYearUpdateConfig
           "fields" => [
             {
               "name" => "sponsored_by",
+              "title" => "Sponsored By",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
-              "type" => "`$STRING`",
             },
             {
               "name" => "year",
+              "title" => "Year",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "The current year as an integer",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "year_string",
+              "title" => "Year String",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The current year as a string",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "year",
@@ -123,7 +126,6 @@ module FooterYearUpdateConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/year",
@@ -132,14 +134,16 @@ module FooterYearUpdateConfig
                       "lit" => "year",
                     },
                   ],
-                  "select" => {},
+                  "parts" => [
+                    "year",
+                  ],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "year",
-                  ],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },

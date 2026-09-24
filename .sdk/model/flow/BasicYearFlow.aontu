@@ -1,0 +1,28 @@
+# BasicYearFlow
+
+main: kit: flow: BasicYearFlow:
+{
+  entity: "year",
+  kind: "basic",
+  name: "BasicYearFlow",
+  step: [
+    {
+      i: {
+        ref: "year_ref01",
+        srcdatavar: "year_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-year_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicYearFlow"
+}
