@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 FooterYearUpdateUtility::setRegistrar(function (FooterYearUpdateUtility $u): void {
     $u->clean = [FooterYearUpdateClean::class, 'call'];
+    $u->clean_add = [FooterYearUpdateClean::class, 'add'];
+    $u->clean_explain = [FooterYearUpdateDone::class, 'clean_explain'];
     $u->done = [FooterYearUpdateDone::class, 'call'];
     $u->make_error = [FooterYearUpdateMakeError::class, 'call'];
     $u->feature_add = [FooterYearUpdateFeatureAdd::class, 'call'];

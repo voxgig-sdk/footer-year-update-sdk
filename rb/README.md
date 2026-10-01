@@ -12,9 +12,18 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`):
+GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/footer-year-update-sdk/releases)), or
+from a clone:
 
-- Releases: [https://github.com/voxgig-sdk/footer-year-update-sdk/releases](https://github.com/voxgig-sdk/footer-year-update-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/footer-year-update-sdk
+```
+
+Then add it to your `Gemfile` by path, and run `bundle install`:
+
+```ruby
+gem "voxgig-sdk-footer-year-update-sdk", path: "./footer-year-update-sdk/rb"
+```
 
 
 ## Tutorial: your first API call

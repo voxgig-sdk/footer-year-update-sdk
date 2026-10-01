@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 FooterYearUpdateUtility.registrar = ->(u) {
   u.clean = FooterYearUpdateUtilities::Clean
+  u.clean_add = FooterYearUpdateUtilities::CleanAdd
+  u.clean_explain = FooterYearUpdateUtilities::CleanExplain
   u.done = FooterYearUpdateUtilities::Done
   u.make_error = FooterYearUpdateUtilities::MakeError
   u.feature_add = FooterYearUpdateUtilities::FeatureAdd

@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/footer-year-update-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/footer-year-update-sdk/releases](https://github.com/voxgig-sdk/footer-year-update-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/footer-year-update-sdk
+composer config repositories.footer-year-update-sdk path ./footer-year-update-sdk/php
+composer require voxgig-sdk/footer-year-update-sdk:@dev
+```
 
 
 ## Tutorial: your first API call
