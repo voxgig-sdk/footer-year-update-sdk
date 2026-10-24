@@ -54,6 +54,14 @@ const utility_1 = require("../../utility");
         const ent = testsdk.Year();
         (0, node_assert_1.default)(null != ent);
     });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.FooterYearUpdateSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.Year().load({ "sponsored_by": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.FOOTER_YEAR_UPDATE_TEST_LIVE;
         for (const op of ['load']) {
@@ -62,7 +70,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "sponsored_by": { "a": true, "h": "Sponsored By", "n": "sponsored_by", "r": true, "sh": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)", "t": "`$STRING`", "key$": "sponsored_by", "index$": 0 }, "year": { "a": true, "h": "Year", "n": "year", "r": true, "sh": "The current year as an integer", "t": "`$INTEGER`", "key$": "year", "index$": 1 }, "year_string": { "a": true, "h": "Year String", "n": "year_string", "r": true, "sh": "The current year as a string", "t": "`$STRING`", "key$": "year_string", "index$": 2 } }, "name": "year", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /year", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/year", "q": {}, "r": {}, "s": [{ "lit": "year" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "year", "name__orig": "year", "Name": "Year", "name_": "year", "name-": "year", "NAME": "YEAR", "index$": 0 }, { "active": true, "entity": "year", "key$": "BasicYearFlow", "kind": "basic", "name": "BasicYearFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "year_ref01", "srcdatavar": "year_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-year_ref01" } }], "index$": 0 }] }, 'Year', { "GET /year": { "protocol": "http", "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "sponsored_by": { "a": true, "h": "Sponsored By", "n": "sponsored_by", "r": true, "sh": "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)", "t": "`$STRING`", "key$": "sponsored_by", "index$": 0 }, "year": { "a": true, "h": "Year", "n": "year", "r": true, "sh": "The current year as an integer", "t": "`$INTEGER`", "key$": "year", "index$": 1 }, "year_string": { "a": true, "h": "Year String", "n": "year_string", "r": true, "sh": "The current year as a string", "t": "`$STRING`", "key$": "year_string", "index$": 2 } }, "name": "year", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /year", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/year", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "year" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "year", "name__orig": "year", "Name": "Year", "name_": "year", "name-": "year", "NAME": "YEAR", "index$": 0 }, { "active": true, "entity": "year", "key$": "BasicYearFlow", "kind": "basic", "name": "BasicYearFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "year_ref01", "srcdatavar": "year_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-year_ref01" } }], "index$": 0 }] }, 'Year', { "GET /year": { "protocol": "http", "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -76,6 +84,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(null != year_ref01_data_dt0);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

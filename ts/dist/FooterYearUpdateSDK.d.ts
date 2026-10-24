@@ -7,6 +7,19 @@ import { FooterYearUpdateEntityBase } from './FooterYearUpdateEntityBase';
 import { Utility } from './utility/Utility';
 import { BaseFeature } from './feature/base/BaseFeature';
 declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
 declare class FooterYearUpdateSDK {
     _mode: string;
     _options: any;
@@ -17,32 +30,8 @@ declare class FooterYearUpdateSDK {
     options(): any;
     utility(): any;
     prepare(fetchargs?: any): Promise<any>;
-    direct(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
-    _rawRequest(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     Year(entopts?: Record<string, any>): YearEntity;
     static test(testoptsarg?: any, sdkoptsarg?: any): FooterYearUpdateSDK;
@@ -55,3 +44,4 @@ declare class FooterYearUpdateSDK {
 }
 declare const SDK: typeof FooterYearUpdateSDK;
 export { stdutil, config, BaseFeature, FooterYearUpdateEntityBase, FooterYearUpdateSDK, SDK, };
+export type { DirectResult };

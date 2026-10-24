@@ -3,5 +3,15 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Production API Server",
+      "Sponsored message (required to be displayed/logged per Terms of Service for free tier users)",
+      "Successful response with current year information",
+      "The current year as a string",
+      "The current year as an integer",
+      "This API automatically retrieves the current year for website footers, eliminating the need for manual updates each January. Designed for developers, it ensures that the displayed year is accurate and up to date, improving user experience while saving time and resources."
+    ]
+  }
 }
